@@ -1,0 +1,30 @@
+@media (max-width: 960px) {
+    .hero-grid, .footer-grid { grid-template-columns: 1fr; }
+    .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .quick-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+    .menu-toggle { display: inline-block; }
+    .site-nav {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #08120e;
+        border-bottom: 1px solid var(--panel-border);
+        padding: .7rem 4%;
+        flex-direction: column;
+        z-index: 35;
+    }
+    .site-nav.open { display: flex; }
+    .site-nav a { width: 100%; }
+}
+
+@media (max-width: 560px) {
+    .game-grid { grid-template-columns: 1fr; }
+    .quick-links { grid-template-columns: 1fr; }
+    .hero-panel, .section-block, .prose { padding: .9rem; }
+    .container { width: min(1120px, 94%); }
+}
