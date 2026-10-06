@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+    <defs>
+        <linearGradient id="bg" y2="1">
+            <stop stop-color="#050615"/>
+            <stop offset=".55" stop-color="#171044"/>
+            <stop offset="1" stop-color="#ff1493"/>
+        </linearGradient>
+        <linearGradient id="road" x2="1">
+            <stop stop-color="#11152d"/>
+            <stop offset=".5" stop-color="#303452"/>
+            <stop offset="1" stop-color="#11152d"/>
+        </linearGradient>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <rect width="800" height="450" fill="url(#bg)"/>
+
+    <path d="M285 450L365 190h70l80 260z"
+          fill="url(#road)" stroke="#00f6ff" stroke-width="4"/>
+
+    <path d="M400 450V390M400 345V300M400 255V220"
+          stroke="#ffe600" stroke-width="8" stroke-dasharray="25 20"
+          filter="url(#glow)"/>
+
+    <path d="M270 450L355 190M530 450L445 190"
+          stroke="#ff1493" stroke-width="5" filter="url(#glow)"/>
+
+    <g transform="translate(400 310)" filter="url(#glow)">
+        <path d="M-53 58L-42-27Q0-58 42-27L53 58Z"
+              fill="#ffe600" stroke="#fff" stroke-width="4"/>
+        <path d="M-31-22h62l18 28h-98z"
+              fill="#00f6ff" stroke="#07101d" stroke-width="5"/>
+        <rect x="-63" y="32" width="20" height="13" fill="#ff1493"/>
+        <rect x="43" y="32" width="20" height="13" fill="#ff1493"/>
+        <circle cx="-35" cy="58" r="13" fill="#07101d" stroke="#00f6ff" stroke-width="5"/>
+        <circle cx="35" cy="58" r="13" fill="#07101d" stroke="#00f6ff" stroke-width="5"/>
+    </g>
+
+    <text x="35" y="58" fill="#ffe600" font-family="Arial"
+          font-size="25" font-weight="bold" letter-spacing="7">
+        NITRO HIGHWAY
+    </text>
+    <text x="38" y="405" fill="#00f6ff" font-family="monospace"
+          font-size="18" letter-spacing="4">
+        SPEED // DRIFT // SURVIVE
+    </text>
+</svg>

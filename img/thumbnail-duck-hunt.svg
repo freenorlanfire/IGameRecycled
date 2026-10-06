@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+    <defs>
+        <linearGradient id="sky" y2="1">
+            <stop stop-color="#12052b"/>
+            <stop offset=".6" stop-color="#062c51"/>
+            <stop offset="1" stop-color="#07101d"/>
+        </linearGradient>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <rect width="800" height="450" fill="url(#sky)"/>
+
+    <circle cx="650" cy="86" r="48" fill="#ff1493" opacity=".3"
+            filter="url(#glow)"/>
+    <circle cx="650" cy="86" r="30" fill="#ff1493" opacity=".75"/>
+
+    <path d="M0 340L90 245 170 335 270 210 360 340 475 230 580 340 700 190 800 310V450H0Z"
+          fill="#071326" stroke="#00f6ff" stroke-width="3"/>
+
+    <g transform="translate(430 170) rotate(-8)" filter="url(#glow)">
+        <ellipse cx="0" cy="25" rx="75" ry="45" fill="#a8ff00"/>
+        <ellipse cx="-10" cy="-18" rx="57" ry="25"
+                 fill="#00f6ff" transform="rotate(-20)"/>
+        <circle cx="69" cy="-2" r="34" fill="#ffe600"/>
+        <path d="M94 0l39 12-38 13z" fill="#ff7b00"/>
+        <circle cx="78" cy="-12" r="6" fill="#ff1493"/>
+        <circle cx="78" cy="-12" r="2.5" fill="#07101d"/>
+    </g>
+
+    <g transform="translate(430 170)" fill="none" stroke="#ff1493"
+       stroke-width="5" filter="url(#glow)">
+        <circle r="83"/>
+        <path d="M-110 0h220M0-110v220"/>
+    </g>
+
+    <text x="35" y="58" fill="#ff1493" font-family="Arial"
+          font-size="25" font-weight="bold" letter-spacing="7">
+        NEON DUCK HUNT
+    </text>
+    <text x="38" y="405" fill="#00f6ff" font-family="monospace"
+          font-size="18" letter-spacing="4">
+        TRACK // AIM // FIRE
+    </text>
+</svg>

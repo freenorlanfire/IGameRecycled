@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+    <defs>
+        <linearGradient id="bg" y2="1">
+            <stop stop-color="#061b27"/>
+            <stop offset="1" stop-color="#050611"/>
+        </linearGradient>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <rect width="800" height="450" fill="url(#bg)"/>
+
+    <g stroke="#00f6ff" stroke-width="1" opacity=".2">
+        <path d="M0 45h800M0 90h800M0 135h800M0 180h800M0 225h800M0 270h800M0 315h800M0 360h800M0 405h800"/>
+        <path d="M45 0v450M90 0v450M135 0v450M180 0v450M225 0v450M270 0v450M315 0v450M360 0v450M405 0v450M450 0v450M495 0v450M540 0v450M585 0v450M630 0v450M675 0v450M720 0v450M765 0v450"/>
+    </g>
+
+    <g fill="none" stroke="#a8ff00" stroke-width="30"
+       stroke-linecap="round" stroke-linejoin="round"
+       filter="url(#glow)">
+        <path d="M155 300C155 205 230 145 330 190S520 300 590 220"/>
+    </g>
+
+    <circle cx="155" cy="300" r="30" fill="#a8ff00"
+            stroke="#fff" stroke-width="4" filter="url(#glow)"/>
+    <circle cx="147" cy="291" r="5" fill="#07101d"/>
+    <circle cx="165" cy="291" r="5" fill="#07101d"/>
+
+    <g filter="url(#glow)">
+        <path d="M640 102l15 32 35 4-26 23 8 35-32-18-31 18 8-35-26-23 35-4z"
+              fill="#ffe600"/>
+    </g>
+
+    <text x="35" y="58" fill="#a8ff00" font-family="Arial"
+          font-size="25" font-weight="bold" letter-spacing="7">
+        NEON SNAKE
+    </text>
+    <text x="38" y="405" fill="#00f6ff" font-family="monospace"
+          font-size="18" letter-spacing="4">
+        GROW // TURN // SURVIVE
+    </text>
+</svg>

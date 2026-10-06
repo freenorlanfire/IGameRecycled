@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+    <defs>
+        <linearGradient id="bg" x2="1" y2="1">
+            <stop stop-color="#071b2b"/>
+            <stop offset=".5" stop-color="#102a4b"/>
+            <stop offset="1" stop-color="#18051e"/>
+        </linearGradient>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <rect width="800" height="450" fill="url(#bg)"/>
+
+    <g opacity=".5" stroke="#00f6ff" stroke-width="2">
+        <path d="M0 90h800M0 150h800M0 210h800"/>
+        <path d="M70 0L270 450M230 0L390 450M530 0L430 450M700 0L500 450"/>
+    </g>
+
+    <path d="M50 450L310 200h180l260 250z"
+          fill="#101426" stroke="#ff1493" stroke-width="4"/>
+
+    <path d="M400 450L400 380M400 340V295M400 260V225"
+          stroke="#a8ff00" stroke-width="9" stroke-dasharray="28 20"
+          filter="url(#glow)"/>
+
+    <g transform="translate(405 315) rotate(-8)" filter="url(#glow)">
+        <path d="M-80 52L-62-18Q0-66 62-18L80 52Z"
+              fill="#ff3d71" stroke="#ffe600" stroke-width="5"/>
+        <path d="M-46-24h92l20 31h-132z"
+              fill="#071b2b" stroke="#00f6ff" stroke-width="6"/>
+        <path d="M-74 32h148" stroke="#00f6ff" stroke-width="5"/>
+        <circle cx="-50" cy="54" r="15" fill="#07101d"
+                stroke="#a8ff00" stroke-width="5"/>
+        <circle cx="50" cy="54" r="15" fill="#07101d"
+                stroke="#a8ff00" stroke-width="5"/>
+    </g>
+
+    <text x="35" y="58" fill="#ff1493" font-family="Arial"
+          font-size="25" font-weight="bold" letter-spacing="7">
+        NITRO HIGHWAY 2
+    </text>
+    <text x="38" y="405" fill="#a8ff00" font-family="monospace"
+          font-size="18" letter-spacing="4">
+        TURBO // TRAFFIC // RUSH
+    </text>
+</svg>

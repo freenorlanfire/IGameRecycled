@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+    <defs>
+        <linearGradient id="space" x2="1" y2="1">
+            <stop stop-color="#050611"/>
+            <stop offset=".55" stop-color="#170d3b"/>
+            <stop offset="1" stop-color="#062c4b"/>
+        </linearGradient>
+        <radialGradient id="planet">
+            <stop stop-color="#ff1493"/>
+            <stop offset=".65" stop-color="#6835d4"/>
+            <stop offset="1" stop-color="#07101d"/>
+        </radialGradient>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <rect width="800" height="450" fill="url(#space)"/>
+
+    <g fill="#fff">
+        <circle cx="90" cy="95" r="2"/>
+        <circle cx="180" cy="160" r="3"/>
+        <circle cx="285" cy="72" r="2"/>
+        <circle cx="680" cy="160" r="3"/>
+        <circle cx="730" cy="75" r="2"/>
+        <circle cx="570" cy="65" r="2"/>
+        <circle cx="470" cy="125" r="2"/>
+    </g>
+
+    <circle cx="650" cy="330" r="120" fill="url(#planet)"
+            stroke="#00f6ff" stroke-width="5" filter="url(#glow)"/>
+    <ellipse cx="650" cy="330" rx="175" ry="35"
+             fill="none" stroke="#ff1493" stroke-width="8"
+             transform="rotate(-18 650 330)" filter="url(#glow)"/>
+
+    <g transform="translate(350 220)" filter="url(#glow)">
+        <circle cx="0" cy="-42" r="38" fill="#dcecff"
+                stroke="#00f6ff" stroke-width="7"/>
+        <path d="M-24-47h48v30h-48z" fill="#07101d"
+              stroke="#ff1493" stroke-width="4"/>
+        <path d="M-52 10Q0-18 52 10L62 105H-62Z"
+              fill="#dcecff" stroke="#00f6ff" stroke-width="7"/>
+        <path d="M-45 28h90v25h-90z"
+              fill="#ff1493" opacity=".8"/>
+        <path d="M-62 30L-105 70M62 30l45 40"
+              stroke="#ffe600" stroke-width="12"
+              stroke-linecap="round"/>
+        <path d="M-35 105v65M35 105v65"
+              stroke="#00f6ff" stroke-width="14"
+              stroke-linecap="round"/>
+    </g>
+
+    <text x="35" y="58" fill="#b56cff" font-family="Arial"
+          font-size="25" font-weight="bold" letter-spacing="7">
+        NEON SPACEMAN
+    </text>
+    <text x="38" y="405" fill="#00f6ff" font-family="monospace"
+          font-size="18" letter-spacing="4">
+        SPACE // DANGER // ESCAPE
+    </text>
+</svg>

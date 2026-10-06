@@ -1,0 +1,364 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 800 450"
+    role="img"
+    aria-labelledby="title description"
+>
+    <title id="title">Miniatura de Neon Flappy</title>
+
+    <desc id="description">
+        Pájaro neon atravesando portales cyberpunk.
+    </desc>
+
+    <defs>
+        <linearGradient id="backgroundGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#050611"/>
+            <stop offset="48%" stop-color="#111b45"/>
+            <stop offset="100%" stop-color="#260724"/>
+        </linearGradient>
+
+        <linearGradient id="pipeGradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#007c91"/>
+            <stop offset="45%" stop-color="#00f6ff"/>
+            <stop offset="100%" stop-color="#006170"/>
+        </linearGradient>
+
+        <linearGradient id="birdGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#eaff85"/>
+            <stop offset="45%" stop-color="#a8ff00"/>
+            <stop offset="100%" stop-color="#20b85c"/>
+        </linearGradient>
+
+        <radialGradient id="moonGradient">
+            <stop offset="0%" stop-color="#ff8cdb"/>
+            <stop offset="42%" stop-color="#ff1493"/>
+            <stop offset="100%" stop-color="#67104d"/>
+        </radialGradient>
+
+        <filter id="neonCyan">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <filter id="neonPink">
+            <feGaussianBlur stdDeviation="7" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <filter id="neonGreen">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <pattern
+            id="gridPattern"
+            width="42"
+            height="42"
+            patternUnits="userSpaceOnUse"
+        >
+            <path
+                d="M42 0H0V42"
+                fill="none"
+                stroke="#00f6ff"
+                stroke-width="1"
+                opacity=".18"
+            />
+        </pattern>
+    </defs>
+
+    <rect
+        width="800"
+        height="450"
+        fill="url(#backgroundGradient)"
+    />
+
+    <rect
+        width="800"
+        height="450"
+        fill="url(#gridPattern)"
+        opacity=".62"
+    />
+
+    <circle
+        cx="650"
+        cy="100"
+        r="82"
+        fill="#ff1493"
+        opacity=".25"
+        filter="url(#neonPink)"
+    />
+
+    <circle
+        cx="650"
+        cy="100"
+        r="43"
+        fill="url(#moonGradient)"
+        stroke="#ff8cdb"
+        stroke-width="3"
+        filter="url(#neonPink)"
+    />
+
+    <g
+        fill="#ffffff"
+        opacity=".85"
+    >
+        <circle cx="85" cy="86" r="2"/>
+        <circle cx="168" cy="145" r="3"/>
+        <circle cx="270" cy="70" r="2"/>
+        <circle cx="520" cy="55" r="2"/>
+        <circle cx="735" cy="175" r="3"/>
+        <circle cx="585" cy="215" r="2"/>
+        <circle cx="405" cy="95" r="2"/>
+    </g>
+
+    <path
+        d="M0 350L105 274L180 326L285 220L380 325L492 245L590 330L708 210L800 292V450H0Z"
+        fill="#07152c"
+        stroke="#00f6ff"
+        stroke-width="3"
+        opacity=".95"
+    />
+
+    <path
+        d="M0 350L105 274L180 326L285 220L380 325L492 245L590 330L708 210L800 292"
+        fill="none"
+        stroke="#00f6ff"
+        stroke-width="3"
+        opacity=".65"
+        filter="url(#neonCyan)"
+    />
+
+    <!-- Tubo superior -->
+    <g filter="url(#neonCyan)">
+        <rect
+            x="575"
+            y="-30"
+            width="82"
+            height="155"
+            rx="5"
+            fill="url(#pipeGradient)"
+            stroke="#8fffff"
+            stroke-width="4"
+        />
+
+        <rect
+            x="562"
+            y="108"
+            width="108"
+            height="25"
+            rx="5"
+            fill="#ff1493"
+            stroke="#ff9bd8"
+            stroke-width="4"
+        />
+
+        <path
+            d="M590-10V100M613-10V100"
+            stroke="#ffffff"
+            stroke-width="6"
+            opacity=".3"
+        />
+    </g>
+
+    <!-- Tubo inferior -->
+    <g filter="url(#neonCyan)">
+        <rect
+            x="575"
+            y="300"
+            width="82"
+            height="190"
+            rx="5"
+            fill="url(#pipeGradient)"
+            stroke="#8fffff"
+            stroke-width="4"
+        />
+
+        <rect
+            x="562"
+            y="289"
+            width="108"
+            height="25"
+            rx="5"
+            fill="#ff1493"
+            stroke="#ff9bd8"
+            stroke-width="4"
+        />
+
+        <path
+            d="M590 323V470M613 323V470"
+            stroke="#ffffff"
+            stroke-width="6"
+            opacity=".3"
+        />
+    </g>
+
+    <!-- Estela del pájaro -->
+    <path
+        d="M235 222C190 207 164 220 130 202"
+        fill="none"
+        stroke="#ff1493"
+        stroke-width="7"
+        stroke-linecap="round"
+        opacity=".7"
+        filter="url(#neonPink)"
+    />
+
+    <path
+        d="M227 242C180 242 157 258 119 250"
+        fill="none"
+        stroke="#00f6ff"
+        stroke-width="4"
+        stroke-linecap="round"
+        opacity=".8"
+        filter="url(#neonCyan)"
+    />
+
+    <!-- Pájaro principal -->
+    <g
+        transform="translate(300 225) rotate(-8)"
+        filter="url(#neonGreen)"
+    >
+        <ellipse
+            cx="0"
+            cy="0"
+            rx="54"
+            ry="37"
+            fill="url(#birdGradient)"
+            stroke="#eaff85"
+            stroke-width="4"
+        />
+
+        <!-- Ala -->
+        <ellipse
+            cx="-9"
+            cy="15"
+            rx="35"
+            ry="16"
+            fill="#00f6ff"
+            stroke="#b6ffff"
+            stroke-width="3"
+            transform="rotate(-25 -9 15)"
+        />
+
+        <!-- Cabeza -->
+        <circle
+            cx="42"
+            cy="-21"
+            r="28"
+            fill="#ffe600"
+            stroke="#fff49c"
+            stroke-width="4"
+        />
+
+        <!-- Pico -->
+        <path
+            d="M63-22L98-10L63 3Z"
+            fill="#ff7b00"
+            stroke="#ffd09d"
+            stroke-width="3"
+        />
+
+        <!-- Ojo -->
+        <circle
+            cx="49"
+            cy="-29"
+            r="7"
+            fill="#ff1493"
+        />
+
+        <circle
+            cx="51"
+            cy="-31"
+            r="3"
+            fill="#07101d"
+        />
+
+        <!-- Detalle del cuerpo -->
+        <path
+            d="M-36-14C-12-32 13-32 29-16"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="4"
+            opacity=".5"
+        />
+    </g>
+
+    <!-- Moneda de puntuación -->
+    <g
+        transform="translate(440 115)"
+        filter="url(#neonGreen)"
+    >
+        <circle
+            r="25"
+            fill="#ffe600"
+            stroke="#fff7a3"
+            stroke-width="4"
+        />
+
+        <path
+            d="M-5-14L8 0L-5 14"
+            fill="none"
+            stroke="#ff7b00"
+            stroke-width="5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+    </g>
+
+    <!-- Suelo -->
+    <rect
+        x="0"
+        y="400"
+        width="800"
+        height="50"
+        fill="#07101d"
+    />
+
+    <path
+        d="M0 400H800"
+        stroke="#ff1493"
+        stroke-width="5"
+        filter="url(#neonPink)"
+    />
+
+    <path
+        d="M0 425H800"
+        stroke="#00f6ff"
+        stroke-width="2"
+        stroke-dasharray="22 18"
+        opacity=".75"
+    />
+
+    <text
+        x="35"
+        y="57"
+        fill="#00f6ff"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="26"
+        font-weight="900"
+        letter-spacing="7"
+    >
+        NEON FLAPPY
+    </text>
+
+    <text
+        x="38"
+        y="385"
+        fill="#a8ff00"
+        font-family="monospace"
+        font-size="18"
+        font-weight="bold"
+        letter-spacing="4"
+    >
+        FLY // DODGE // SCORE
+    </text>
+</svg>

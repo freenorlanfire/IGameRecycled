@@ -1,0 +1,245 @@
+/* =========================================================
+   MINIATURAS PREMIUM DEL LAUNCHER
+   ========================================================= */
+
+.modo-juegos {
+    isolation: isolate;
+}
+
+.launcher-header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.launcher-kicker {
+    display: block;
+    margin-bottom: 12px;
+    color: #00f6ff;
+    font-family: monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-shadow: 0 0 10px rgba(0, 246, 255, 0.75);
+}
+
+.miniatura-juego {
+    position: relative;
+    height: 158px;
+    margin: -22px -22px 20px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-juego);
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-juego),
+            #090b18 72%
+        );
+}
+
+.miniatura-juego::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    inset: 0;
+    pointer-events: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow:
+        inset 0 0 25px rgba(0, 0, 0, 0.28),
+        inset 0 -30px 35px rgba(0, 0, 0, 0.35);
+}
+
+.miniatura-overlay {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            to top,
+            rgba(5, 6, 17, 0.82),
+            transparent 58%
+        ),
+        linear-gradient(
+            110deg,
+            transparent 32%,
+            rgba(255, 255, 255, 0.2) 50%,
+            transparent 68%
+        );
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.miniatura-juego img {
+    position: relative;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter:
+        saturate(1.12)
+        contrast(1.08)
+        brightness(0.88);
+    transform: scale(1.01);
+    transition:
+        transform 0.45s ease,
+        filter 0.3s ease;
+}
+
+.tarjeta-juego:hover .miniatura-juego img {
+    filter:
+        saturate(1.38)
+        contrast(1.12)
+        brightness(1.05);
+    transform: scale(1.1);
+}
+
+.tarjeta-juego:hover .miniatura-overlay {
+    opacity: 0.55;
+}
+
+.miniatura-icono {
+    position: absolute;
+    z-index: 4;
+    left: 16px;
+    bottom: 14px;
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--color-juego);
+    border-radius: 13px;
+    background: rgba(5, 6, 17, 0.8);
+    box-shadow:
+        0 0 15px var(--color-juego),
+        inset 0 0 12px rgba(255, 255, 255, 0.1);
+    font-size: 1.7rem;
+    line-height: 1;
+    backdrop-filter: blur(6px);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.tarjeta-juego:hover .miniatura-icono {
+    transform: rotate(-7deg) scale(1.12);
+    box-shadow:
+        0 0 24px var(--color-juego),
+        inset 0 0 12px rgba(255, 255, 255, 0.14);
+}
+
+.categoria-juego {
+    position: absolute;
+    z-index: 4;
+    right: 15px;
+    bottom: 17px;
+    padding: 6px 9px;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    border-radius: 5px;
+    color: #ffffff;
+    background: rgba(5, 6, 17, 0.75);
+    font-family: monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    backdrop-filter: blur(6px);
+}
+
+.estado-juego {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: fit-content;
+    margin: 0 0 10px;
+    color: #a8ff00;
+    font-family: monospace;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.estado-punto {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #a8ff00;
+    box-shadow:
+        0 0 6px #a8ff00,
+        0 0 12px #a8ff00;
+    animation: puntoOnline 1.6s ease-in-out infinite;
+}
+
+.imagen-no-disponible::after {
+    content: "IMAGEN NO DISPONIBLE";
+    position: absolute;
+    z-index: 5;
+    color: rgba(255, 255, 255, 0.68);
+    font-family: monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+}
+
+.imagen-no-disponible img {
+    display: none;
+}
+
+@keyframes puntoOnline {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.45;
+        transform: scale(0.75);
+    }
+}
+
+@media (max-width: 700px) {
+    .miniatura-juego {
+        height: 170px;
+    }
+
+    .launcher-kicker {
+        font-size: 0.6rem;
+        letter-spacing: 0.12em;
+    }
+}
+
+@media (max-width: 430px) {
+    .miniatura-juego {
+        height: 150px;
+        margin-right: -18px;
+        margin-left: -18px;
+    }
+
+    .miniatura-icono {
+        left: 12px;
+        bottom: 12px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.45rem;
+    }
+
+    .categoria-juego {
+        right: 12px;
+        bottom: 14px;
+        font-size: 0.55rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .estado-punto,
+    .miniatura-juego img,
+    .miniatura-icono,
+    .modo-juegos.visible,
+    .tarjeta-juego,
+    .btn-juegos,
+    .btn-abrir-juego {
+        animation: none;
+        transition: none;
+    }
+}
