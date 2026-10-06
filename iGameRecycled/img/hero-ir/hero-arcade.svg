@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-labelledby="heroTitle">
+  <title id="heroTitle">Arcade control panel illustration</title>
+  <rect width="640" height="420" rx="24" fill="#09130f"/>
+  <rect x="44" y="54" width="552" height="312" rx="22" fill="#0f2019" stroke="#205a40" stroke-width="4"/>
+  <rect x="76" y="88" width="314" height="174" rx="14" fill="#07110d" stroke="#1f7e4f"/>
+  <path d="M94 216h278M94 194h220M94 172h188" stroke="#1cc776" stroke-width="8" stroke-linecap="round" opacity=".75"/>
+  <circle cx="474" cy="170" r="54" fill="#133225" stroke="#29de88" stroke-width="8"/>
+  <circle cx="474" cy="170" r="22" fill="#2ef598"/>
+  <circle cx="538" cy="240" r="24" fill="#1a4a34" stroke="#29de88" stroke-width="5"/>
+  <circle cx="462" cy="250" r="24" fill="#1a4a34" stroke="#29de88" stroke-width="5"/>
+  <circle cx="398" cy="240" r="24" fill="#1a4a34" stroke="#29de88" stroke-width="5"/>
+  <rect x="104" y="286" width="440" height="42" rx="11" fill="#0a1913" stroke="#1e6d43"/>
+  <path d="M134 307h76M240 307h54M324 307h95" stroke="#2fe89a" stroke-width="7" stroke-linecap="round"/>
+</svg>

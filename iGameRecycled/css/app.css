@@ -1,0 +1,100 @@
+:root {
+    --bg: #070b09;
+    --bg-soft: #0f1714;
+    --panel: #111d18;
+    --panel-border: #1f382f;
+    --text: #def7e8;
+    --muted: #9bc3ac;
+    --accent: #22d27f;
+    --accent-strong: #15a562;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle at top, #122319 0%, var(--bg) 55%);
+    color: var(--text);
+}
+a { color: inherit; }
+.container { width: min(1120px, 92%); margin: 0 auto; }
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(7, 11, 9, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--panel-border);
+}
+.nav-row { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 1rem; }
+.brand { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; font-weight: 700; }
+.brand img { width: 34px; height: 34px; }
+.site-nav { display: flex; gap: .25rem; flex-wrap: wrap; }
+.site-nav a {
+    text-decoration: none;
+    padding: .5rem .75rem;
+    border-radius: .5rem;
+    color: var(--muted);
+}
+.site-nav a:hover,
+.site-nav a.active { color: var(--text); background: #173127; }
+.menu-toggle { display: none; background: transparent; border: 1px solid var(--panel-border); border-radius: .5rem; padding: .4rem; }
+.menu-toggle span { display: block; width: 21px; height: 2px; margin: 4px 0; background: var(--text); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+.site-main { padding: 1.25rem 0 2.5rem; }
+.hero-panel, .section-block, .ad-slot, .prose {
+    background: linear-gradient(180deg, rgba(22, 40, 33, .72), rgba(15, 23, 20, .92));
+    border: 1px solid var(--panel-border);
+    border-radius: 16px;
+}
+.section-block, .prose { padding: 1.1rem; margin-top: 1rem; }
+.hero-panel { margin: .5rem auto 1rem; width: min(1120px, 92%); padding: 1.2rem; }
+.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 1rem; }
+.hero-grid h1 { margin: .4rem 0 .8rem; font-size: clamp(1.65rem, 3vw, 2.4rem); }
+.eyebrow { text-transform: uppercase; color: var(--accent); letter-spacing: .1em; font-size: .78rem; }
+.hero-visual img { width: 100%; max-height: 280px; object-fit: contain; }
+.hero-actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .9rem; }
+.btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #062114;
+    text-decoration: none;
+    border: none;
+    border-radius: .65rem;
+    padding: .6rem .9rem;
+    font-weight: 700;
+}
+.btn:hover { background: #41e394; }
+.btn-outline { background: transparent; color: var(--text); border: 1px solid var(--accent); }
+.btn-small { font-size: .9rem; padding: .45rem .72rem; }
+.section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: .8rem; }
+.section-head a { color: var(--accent); }
+.quick-links { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .65rem; }
+.quick-links a {
+    text-decoration: none;
+    background: #102117;
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    padding: .7rem;
+    text-align: center;
+}
+.ad-slot { padding: 1rem; margin: 1rem auto; }
+.ad-label { color: #9bc3ac; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; margin: 0 0 .4rem; }
+.site-footer { margin-top: 1.8rem; border-top: 1px solid var(--panel-border); padding: 1.6rem 0 1.2rem; }
+.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 1rem; }
+.footer-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem; }
+.footer-grid a { color: var(--muted); text-decoration: none; }
+.footer-grid a:hover { color: var(--text); }
+.footer-note { text-align: center; color: var(--muted); font-size: .9rem; margin-top: 1rem; }
+.prose h1, .prose h2 { margin-top: 0; }
+.notice { border-radius: 10px; padding: .7rem .9rem; margin-bottom: .8rem; }
+.notice.success { background: #103621; border: 1px solid #1e864a; }
+.notice.error { background: #351313; border: 1px solid #8e2e2e; }
+.contact-form { display: grid; gap: .5rem; }
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    background: #08110d;
+    color: var(--text);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    padding: .56rem .65rem;
+}
