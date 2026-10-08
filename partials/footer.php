@@ -1,127 +1,32 @@
+    </main>
     <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a
-                    class="brand-logo footer-logo"
-                    href="index.php"
-                >
-                    <span class="brand-mark">M</span>
-
-                    <span class="brand-copy">
-                        <strong>MARIO</strong>
-                        <small>WORLD ARCADE</small>
-                    </span>
-                </a>
-
-                <p>
-                    Un universo de juegos neon creado con PHP,
-                    JavaScript y Canvas.
-                </p>
+        <div class="container footer-grid">
+            <div>
+                <h2>iGameRecycled</h2>
+                <p>Original arcade portal focused on fast-loading, browser-first mini games.</p>
             </div>
-
-            <div class="footer-column">
-                <h3>Explorar</h3>
-
-                <a href="index.php">Home</a>
-                <a href="categories.php">Categorías</a>
-                <a href="community.php">Community</a>
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="<?php echo ir_escape(ir_url('games.php')); ?>">All Games</a></li>
+                    <li><a href="<?php echo ir_escape(ir_url('categories.php')); ?>">Categories</a></li>
+                    <li><a href="<?php echo ir_escape(ir_url('guides.php')); ?>">Game Guides</a></li>
+                </ul>
             </div>
-
-            <div class="footer-column">
-                <h3>Proyecto</h3>
-
-                <a href="about.php">About</a>
-                <a href="contact.php">Contact</a>
-                <a href="login.php">Iniciar sesión</a>
-            </div>
-
-            <div class="footer-column">
-                <h3>Contacto</h3>
-
-                <p>
-                    ¿Tienes una idea para un juego?
-                </p>
-
-                <a
-                    class="footer-email"
-                    href="mailto:freenorlanfire@gmail.com"
-                >
-                    freenorlanfire@gmail.com
-                </a>
+            <div>
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="<?php echo ir_escape(ir_url('privacy.php')); ?>">Privacy</a></li>
+                    <li><a href="<?php echo ir_escape(ir_url('cookies.php')); ?>">Cookies</a></li>
+                    <li><a href="<?php echo ir_escape(ir_url('terms.php')); ?>">Terms</a></li>
+                    <li><a href="<?php echo ir_escape(ir_url('affiliate-disclosure.php')); ?>">Affiliate Disclosure</a></li>
+                </ul>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <span>
-                © <?php echo date("Y"); ?> Mario World Arcade
-            </span>
-
-            <span>
-                PHP · JavaScript · Canvas
-            </span>
-        </div>
+        <p class="footer-note">&copy; <?php echo date('Y'); ?> iGameRecycled. Legacy Mario World files remain available at repository root.</p>
     </footer>
-
-    <script>
-        "use strict";
-
-        const menuToggle =
-            document.getElementById("menuToggle");
-
-        const mainNavigation =
-            document.getElementById("mainNavigation");
-
-        if (menuToggle && mainNavigation) {
-            menuToggle.addEventListener(
-                "click",
-                function() {
-                    const menuAbierto =
-                        mainNavigation.classList.toggle("open");
-
-                    menuToggle.classList.toggle(
-                        "active",
-                        menuAbierto
-                    );
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        menuAbierto ? "true" : "false"
-                    );
-                }
-            );
-
-            mainNavigation
-                .querySelectorAll("a")
-                .forEach(function(enlace) {
-                    enlace.addEventListener(
-                        "click",
-                        function() {
-                            mainNavigation.classList.remove("open");
-                            menuToggle.classList.remove("active");
-
-                            menuToggle.setAttribute(
-                                "aria-expanded",
-                                "false"
-                            );
-                        }
-                    );
-                });
-
-            window.addEventListener(
-                "resize",
-                function() {
-                    if (window.innerWidth > 700) {
-                        mainNavigation.classList.remove("open");
-                        menuToggle.classList.remove("active");
-
-                        menuToggle.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-                    }
-                }
-            );
-        }
-    </script>
+</div>
+<script src="<?php echo ir_escape(ir_url('js/navigation.js')); ?>"></script>
+<script src="<?php echo ir_escape(ir_url('js/app.js')); ?>"></script>
 </body>
 </html>

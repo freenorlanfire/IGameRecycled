@@ -1,150 +1,41 @@
 <?php
-declare(strict_types=1);
-
-require_once __DIR__ . "/config.php";
-
-$pageTitle = $pageTitle ?? "Mario World Arcade";
-$activePage = $activePage ?? "";
-
-$usuarioConectado = isset($_SESSION["usuario"]);
-$nombreUsuario = $usuarioConectado
-    ? (string) $_SESSION["usuario"]
-    : "";
+$pageTitle = isset($pageTitle) ? (string) $pageTitle : 'iGameRecycled';
+$currentPage = isset($currentPage) ? (string) $currentPage : '';
+$metaDescription = isset($metaDescription) ? (string) $metaDescription : 'iGameRecycled arcade portal with quick-play browser games.';
+$portalBase = ir_portal_base_path();
 ?>
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title><?php echo escapar($pageTitle); ?></title>
-
-    <link
-        rel="stylesheet"
-        href="css/estilos.css"
-    >
-
-    <link
-        rel="stylesheet"
-        href="css/miniaturas_launcher.css"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<?php echo ir_escape($metaDescription); ?>">
+    <title><?php echo ir_escape($pageTitle); ?> | iGameRecycled</title>
+    <link rel="icon" type="image/svg+xml" href="<?php echo ir_escape(ir_url('img/svg/logo-igrecycled.svg')); ?>">
+    <link rel="stylesheet" href="<?php echo ir_escape(ir_url('css/app.css')); ?>">
+    <link rel="stylesheet" href="<?php echo ir_escape(ir_url('css/games.css')); ?>">
+    <link rel="stylesheet" href="<?php echo ir_escape(ir_url('css/responsive.css')); ?>">
 </head>
-
 <body>
-    <header class="site-header">
-        <div class="site-header-inner">
-            <a
-                class="brand-logo"
-                href="index.php"
-                aria-label="Ir al inicio"
-            >
-                <span class="brand-mark">M</span>
-
-                <span class="brand-copy">
-                    <strong>MARIO</strong>
-                    <small>WORLD ARCADE</small>
-                </span>
+<div class="site-shell">
+    <header class="site-header" id="top">
+        <div class="container nav-row">
+            <a class="brand" href="<?php echo ir_escape(ir_url('index.php')); ?>" aria-label="Go to homepage">
+                <img src="<?php echo ir_escape(ir_url('img/svg/logo-igrecycled.svg')); ?>" alt="iGameRecycled logo">
+                <span>iGameRecycled</span>
             </a>
-
-            <button
-                type="button"
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Abrir menú"
-                aria-expanded="false"
-                aria-controls="mainNavigation"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+                <span></span><span></span><span></span>
+                <span class="sr-only">Open menu</span>
             </button>
-
-            <nav
-                class="main-navigation"
-                id="mainNavigation"
-                aria-label="Navegación principal"
-            >
-                <a
-                    class="nav-link <?php echo $activePage === "home"
-                        ? "active"
-                        : ""; ?>"
-                    href="index.php"
-                >
-                    <span class="nav-icon">⌂</span>
-                    Home
-                </a>
-
-                <a
-                    class="nav-link <?php echo $activePage === "community"
-                        ? "active"
-                        : ""; ?>"
-                    href="community.php"
-                >
-                    <span class="nav-icon">◉</span>
-                    Community
-                </a>
-
-                <a
-                    class="nav-link <?php echo $activePage === "contact"
-                        ? "active"
-                        : ""; ?>"
-                    href="contact.php"
-                >
-                    <span class="nav-icon">✉</span>
-                    Contact
-                </a>
-
-                <a
-                    class="nav-link <?php echo $activePage === "categories"
-                        ? "active"
-                        : ""; ?>"
-                    href="categories.php"
-                >
-                    <span class="nav-icon">▦</span>
-                    Categorías
-                </a>
-
-                <a
-                    class="nav-link <?php echo $activePage === "about"
-                        ? "active"
-                        : ""; ?>"
-                    href="about.php"
-                >
-                    <span class="nav-icon">ⓘ</span>
-                    About
-                </a>
-
-                <?php if ($usuarioConectado): ?>
-                    <span class="user-badge">
-                        Hola,
-                        <?php echo escapar($nombreUsuario); ?>
-                    </span>
-
-                    <a
-                        class="nav-auth nav-auth-secondary"
-                        href="logout.php"
-                    >
-                        Salir
-                    </a>
-                <?php else: ?>
-                    <a
-                        class="nav-auth"
-                        href="login.php"
-                    >
-                        Iniciar sesión
-                    </a>
-
-                    <a
-                        class="nav-auth nav-auth-primary"
-                        href="register.php"
-                    >
-                        Registrar
-                    </a>
-                <?php endif; ?>
+            <nav class="site-nav" id="site-menu" data-menu>
+                <a href="<?php echo ir_escape(ir_url('index.php')); ?>"<?php echo $currentPage === 'home' ? ' class="active"' : ''; ?>>Home</a>
+                <a href="<?php echo ir_escape(ir_url('games.php')); ?>"<?php echo $currentPage === 'games' ? ' class="active"' : ''; ?>>Games</a>
+                <a href="<?php echo ir_escape(ir_url('categories.php')); ?>"<?php echo $currentPage === 'categories' ? ' class="active"' : ''; ?>>Categories</a>
+                <a href="<?php echo ir_escape(ir_url('guides.php')); ?>"<?php echo $currentPage === 'guides' ? ' class="active"' : ''; ?>>Guides</a>
+                <a href="<?php echo ir_escape(ir_url('about.php')); ?>"<?php echo $currentPage === 'about' ? ' class="active"' : ''; ?>>About</a>
+                <a href="<?php echo ir_escape(ir_url('contact.php')); ?>"<?php echo $currentPage === 'contact' ? ' class="active"' : ''; ?>>Contact</a>
             </nav>
         </div>
     </header>
+    <main class="site-main">

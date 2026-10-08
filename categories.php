@@ -1,45 +1,24 @@
 <?php
-declare(strict_types=1);
-
-require_once __DIR__ . "/partials/config.php";
-
-$pageTitle = "Categorías";
-$activePage = "categories";
-
-require __DIR__ . "/partials/header.php";
+require_once __DIR__ . '/partials/config.php';
+$games = ir_game_catalog();
+$categories = ir_categories();
+$pageTitle = 'Categories';
+$currentPage = 'categories';
+$metaDescription = 'Explore iGameRecycled games by genre and play style.';
+require_once __DIR__ . '/partials/header.php';
 ?>
+<section class="container section-block">
+    <div class="section-head"><h1>Browse by Category</h1></div>
+    <div class="chip-row category-links">
+        <?php foreach ($categories as $category) { ?>
+            <a class="chip" href="<?php echo ir_escape(ir_url('games.php?category=' . urlencode(strtolower($category)))); ?>"><?php echo ir_escape($category); ?></a>
+        <?php } ?>
+    </div>
+</section>
 
-<main class="page-container">
-    <section class="content-card">
-        <span class="section-kicker">
-            GAME CATEGORIES
-        </span>
-
-        <h1>Explora los juegos</h1>
-
-        <div class="category-grid">
-            <?php foreach ($juegos as $juego): ?>
-                <a
-                    class="category-card"
-                    href="games/<?php echo rawurlencode(
-                        $juego["archivo"]
-                    ); ?>"
-                >
-                    <span>
-                        <?php echo escapar($juego["icono"]); ?>
-                    </span>
-
-                    <strong>
-                        <?php echo escapar($juego["nombre"]); ?>
-                    </strong>
-
-                    <small>
-                        <?php echo escapar($juego["categoria"]); ?>
-                    </small>
-                </a>
-            <?php endforeach; ?>
-        </div>
-    </section>
-</main>
-
-<?php require __DIR__ . "/partials/footer.php"; ?>
+<section class="container section-block">
+    <div class="game-grid" data-catalog-grid>
+        <?php foreach ($games as $game) { require __DIR__ . '/partials/game-card.php'; } ?>
+    </div>
+</section>
+<?php require_once __DIR__ . '/partials/footer.php';

@@ -1,38 +1,14 @@
 <?php
-declare(strict_types=1);
-
-$pageTitle = "About";
-$activePage = "about";
-
-require __DIR__ . "/partials/header.php";
+require_once __DIR__ . '/partials/config.php';
+$pageTitle = 'About';
+$currentPage = 'about';
+$metaDescription = 'About the iGameRecycled arcade project and mission.';
+require_once __DIR__ . '/partials/header.php';
 ?>
-
-<main class="page-container">
-    <section class="content-card">
-        <span class="section-kicker">
-            ABOUT THE PROJECT
-        </span>
-
-        <h1>Sobre Mario World Arcade</h1>
-
-        <p>
-            Mario World Arcade es una plataforma experimental de juegos
-            web desarrollada con PHP, HTML5 Canvas, CSS y JavaScript.
-        </p>
-
-        <p>
-            El objetivo del proyecto es aprender programación dinámica,
-            sesiones PHP y desarrollo de videojuegos interactivos.
-        </p>
-
-        <div class="tech-list">
-            <span>PHP</span>
-            <span>JavaScript</span>
-            <span>HTML5 Canvas</span>
-            <span>CSS3</span>
-            <span>Responsive Design</span>
-        </div>
-    </section>
-</main>
-
-<?php require __DIR__ . "/partials/footer.php"; ?>
+<section class="container section-block prose">
+    <h1>About iGameRecycled</h1>
+    <p>iGameRecycled is an original arcade portal brand designed for lightweight play sessions on phones and desktops.</p>
+    <p>This folder is a standalone portal layer that references playable legacy browser games while keeping the repository root project untouched.</p>
+    <p>Our focus is clear UI, responsive access, and transparent ad placement zones for future monetization setup.</p>
+</section>
+<?php require_once __DIR__ . '/partials/footer.php';
