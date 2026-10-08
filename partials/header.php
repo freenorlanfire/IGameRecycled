@@ -15,6 +15,8 @@ $portalBase = ir_portal_base_path();
     <link rel="stylesheet" href="<?php echo ir_escape(ir_url('css/app.css')); ?>">
     <link rel="stylesheet" href="<?php echo ir_escape(ir_url('css/games.css')); ?>">
     <link rel="stylesheet" href="<?php echo ir_escape(ir_url('css/responsive.css')); ?>">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8917055252143931"
+     crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="site-shell">

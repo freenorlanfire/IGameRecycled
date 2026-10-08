@@ -1,3 +1,4 @@
 # iGameRecycled ads.txt placeholder
 # Add authorized sellers here only after you have valid publisher account data.
 # Example format: adsystem.com, publisher-id, DIRECT, certification-id
+google.com, pub-8917055252143931, DIRECT, f08c47fec0942fa0
